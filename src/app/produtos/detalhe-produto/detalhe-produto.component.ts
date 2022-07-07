@@ -14,7 +14,7 @@ export class DetalheProdutoComponent implements OnInit {
   produto: IProduto | undefined;
   quantidade = 1;
   constructor(
-    private produtoService: ProdutosService,
+    private produtosService: ProdutosService,
     private route: ActivatedRoute,
     private noticacaoService: NotificacaoService,
     private carrinhoService: CarrinhoService
@@ -24,7 +24,7 @@ export class DetalheProdutoComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const produtoId = Number(routeParams.get("id"));
-    this.produto = this.produtoService.getOne(produtoId);
+    this.produto = this.produtosService.getOne(produtoId);
   }
 
   adicionarAoCarrinho() {

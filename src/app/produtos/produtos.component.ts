@@ -9,7 +9,7 @@ import { ProdutosService } from '../produtos.service';
   styleUrls: ['./produtos.component.css']
 })
 export class ProdutosComponent implements OnInit {
-  produtos: IProduto[] |undefined;
+  produtos: IProduto[] | undefined;
 
   constructor(
     private produtoService: ProdutosService,
@@ -17,7 +17,7 @@ export class ProdutosComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    const produtos = this.produtoService.getAll();
+     this.produtos = this.produtoService.getAll();
     this.route.queryParamMap.subscribe(params => {
       const descricao = params.get("descricao")?.toLowerCase();
       if(descricao) {
